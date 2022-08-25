@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { isEmpty } from 'rxjs';
 import { DataserviceService } from 'src/app/dataservice.service';
 import { Todo } from 'src/app/Todo';
 
@@ -31,6 +32,23 @@ addTodo(){
   })
 }
 
+
+//! UPDATE - PUT
+
+updateTodo(item:Todo,_title:string){
+  item.title=_title;
+  this.service.updateTodo(item).subscribe(res=>{
+    console.log("update")
+  })
+}
+
+//! DELETE
+deleteTodo(item:Todo){
+  this.service.deleteTodo(item).subscribe(res=>{
+    let index = this.TodosList.indexOf(item);
+    this.TodosList.splice(index,1);
+  })
+}
   ngOnInit(): void {
   }
 

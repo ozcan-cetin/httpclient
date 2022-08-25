@@ -33,4 +33,8 @@ export class DataserviceService {
     return this.http.post<Todo>(this._url + 'todos/'+todo.id, JSON.stringify(todo));
    }
 
+   //!DELETE
+   deleteTodo(todo:Todo):Observable<Todo>{
+    return this.http.delete<Todo>(this._url + 'todos/'+todo.id)
+   }
 }

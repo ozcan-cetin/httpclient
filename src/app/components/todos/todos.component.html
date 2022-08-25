@@ -5,5 +5,7 @@
 <ul>
     <li *ngFor="let item of TodosList">
         {{item.id}}-{{item.userId}}-{{item.title}}
+        <button (click)="updateTodo(item,input.value)">update</button>
+        <button (click)="deleteTodo(item)">delete</button>
     </li>
 </ul>
