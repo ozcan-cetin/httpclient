@@ -1,5 +1,6 @@
 <input type="text" #input>
 <button (click)="getTodo(input.value)">Arama</button>
+<button (click)="addTodo()">Add Todo</button>
 
 <ul>
     <li *ngFor="let item of TodosList">
